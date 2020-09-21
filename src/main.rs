@@ -8,6 +8,9 @@ use amethyst::{
     utils::application_root_dir,
 };
 
+use amethyst::core::transform::TransformBundle;
+
+
 mod pong;
 use crate::pong::Pong;
 
@@ -26,7 +29,8 @@ fn main() -> amethyst::Result<()>{
                 RenderToWindow::from_config_path(display_config_path)?
                     .with_clear([0.0, 0.0, 0.0, 1.0]),
             ).with_plugin(RenderFlat2D::default()),
-        )?;
+        )?
+        .with_bundle(TransformBundle::new())?;
         
     let mut game = Application::new(assets_dir, Pong, game_data)?;
 
