@@ -8,8 +8,8 @@ use amethyst::{
     utils::application_root_dir,
 };
 
-pub struct Pong;
-impl SimpleState for Pong{}
+mod pong;
+use crate::pong::Pong;
 
 fn main() -> amethyst::Result<()>{
     amethyst::start_logger(Default::default());
@@ -27,6 +27,7 @@ fn main() -> amethyst::Result<()>{
                     .with_clear([0.0, 0.0, 0.0, 1.0]),
             ).with_plugin(RenderFlat2D::default()),
         )?;
+        
     let mut game = Application::new(assets_dir, Pong, game_data)?;
 
     game.run();
