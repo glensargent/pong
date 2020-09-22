@@ -8,4 +8,4 @@ edition = "2018"
 
 [dependencies.amethyst]
 amethyst = "0.15.3"
-features = ["metal"]
+features = ["vulkan"]

@@ -17,7 +17,7 @@ pub struct Pong;
 impl SimpleState for Pong{
     fn on_start(&mut self, data: StateData<'_, GameData<'_, '_>>) {
         let world = data.world;
-        world.register::<Paddle>();
+        // world.register::<Paddle>();
 
         // load the spritesheet necessary to render graphics
         let spritesheet_handle = load_spritesheet(world);
